@@ -19,49 +19,14 @@ class Resolucao implements TextWrapInterface {
   /**
    * {@inheritdoc}
    *
-   * Apague o conteúdo do método abaixo e escreva sua própria implementação,
-   * nós colocamos esse mock para poder rodar a análise de cobertura dos
-   * testes unitários.
-   */
-  public function textWrap(string $text, int $length): array {
-    if ($length === 8) {
-      return [
-        'Se vi',
-        'mais',
-        'longe',
-        'foi por',
-        'estar de',
-        'pé sobre',
-        'ombros',
-        'de',
-        'gigantes',
-      ];
-    }
-    elseif ($length === 12) {
-      return [
-        'Se vi mais',
-        'longe foi',
-        'por estar de',
-        'pé sobre',
-        'ombros de',
-        'gigantes',
-      ];
-    }
-    elseif ($length === 10) {
-      // Por favor, não implemente o código desse jeito, isso é só um mock.
-      $ret = [
-        'Se vi mais',
-        'longe foi',
-        'por estar',
-        'de pé',
-        'sobre',
-      ];
-      $ret[] = 'ombros de';
-      $ret[] = 'gigantes';
-      return $ret;
-    }
+   <?php
 
-    return [""];
-  }
+$str = "Se vi mais longe,foi por,estar de pe, sobre os ombros de gigantes";
 
-}
+print_r(str_word_count($str, 1));
+print_r(str_word_count($str, 2));
+print_r(str_word_count($str, 1, 'àáãç3'));
+
+echo str_word_count($str);
+
+?>
